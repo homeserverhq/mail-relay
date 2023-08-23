@@ -48,8 +48,8 @@ EOFHC
   echo "$MAIL_FQDN" > /etc/mailname
   echo "$MAIL_NAME" > /etc/hostname
 
-  QUEUE_LIFETIME_BOUNCE=7d
-  QUEUE_LIFETIME_MAX=7d
+  QUEUE_LIFETIME_BOUNCE=30d
+  QUEUE_LIFETIME_MAX=30d
 
   if [ ! -z ${POSTFIX_QUEUE_LIFETIME_BOUNCE+x} ]; then
     echo "POSTFIX set bounce_queue_lifetime = $POSTFIX_QUEUE_LIFETIME_BOUNCE"
