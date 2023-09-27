@@ -119,8 +119,8 @@ EOF
     tmppw=$(openssl rand -hex 32)
     echo $tmppw | saslpasswd2 -c -p -f /etc/postfix/sasl/sasldb2 tempuser
     saslpasswd2 -d -f /etc/postfix/sasl/sasldb2 tempuser
-    chown postfix:sasl /etc/postfix/sasl/sasldb2
   fi
+  chown postfix:sasl /etc/postfix/sasl/sasldb2
 
   cat <<EOF > /etc/postfix/main-new.cf
 ###### Host Settings ######
