@@ -160,6 +160,7 @@ milter_mail_macros =  i {mail_addr} {client_addr} {client_name} {auth_authen}
 ###### Restrictions ######
 
 smtpd_helo_restrictions = 
+    check_helo_access regexp:/etc/postfix/config/helo_access,
     reject_invalid_helo_hostname,
     reject_non_fqdn_helo_hostname,
     reject_unknown_helo_hostname
@@ -257,6 +258,9 @@ EOF
 
   if [ ! -f /etc/postfix/config/sasl_senders ]; then
     touch /etc/postfix/config/sasl_senders
+  fi
+  if [ ! -f /etc/postfix/config/helo_access ]; then
+    touch /etc/postfix/config/helo_access
   fi
   postmap /etc/postfix/config/sasl_senders
 
