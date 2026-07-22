@@ -69,7 +69,7 @@ services:
 #      - v-mail-relay-clamav:/var/lib/clamav
 
   mail-relay-redis:
-    image: bitnami/redis:7.0.5
+    image: soldevelo/redis:7.0.15
     container_name: mail-relay-redis
     hostname: mail-relay-redis
     restart: unless-stopped
